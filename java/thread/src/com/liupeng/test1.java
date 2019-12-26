@@ -3,6 +3,7 @@ package com.liupeng;
 /**
  * Package: com.liupeng
  * Description：java volatile 可见性的验证
+ * volatile可以保证可见性，防止指令重排，但是不保证原子性。
  * Author: liupissc@cn.ibm.com
  * Date:  12/26/2019 9:58 AM
  * Modified By:
