@@ -10,7 +10,7 @@ package com.liupeng;
  *
  */
 import java.util.concurrent.*;
-class MyData{
+class MyData1{
     //private int number=0;
     private volatile int number=0;
     public void addTo60(){
@@ -23,7 +23,7 @@ class MyData{
 }
 public class test1 {
     public static void main(String[] args) {
-        MyData myData=new MyData();
+        MyData1 myData=new MyData1();
 
         new Thread(() -> {
             System.out.println(Thread.currentThread().getName()+"\tcome in");
