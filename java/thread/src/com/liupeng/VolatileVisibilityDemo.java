@@ -21,7 +21,7 @@ class MyData1{
         return this.number;
     }
 }
-public class test1 {
+public class VolatileVisibilityDemo {
     public static void main(String[] args) {
         MyData1 myData=new MyData1();
 

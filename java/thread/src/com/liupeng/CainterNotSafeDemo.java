@@ -7,7 +7,7 @@ import java.util.UUID;
 
 /**
  * Package: com.liupeng
- * Description：集合类不安全的问题已经解决方法/读写分离的思想
+ * Description：集合类不安全的问题以及解决方法/读写分离的思想
  * Author: liupissc@cn.ibm.com
  * Date:  12/26/2019 2:33 PM
  * Modified By:

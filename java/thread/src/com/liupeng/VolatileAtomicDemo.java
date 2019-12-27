@@ -34,7 +34,7 @@ class MyData2{
     }
 }
 
-public class test2 {
+public class VolatileAtomicDemo {
     public static void main(String[] args) {
         MyData2 myData=new MyData2();
 
