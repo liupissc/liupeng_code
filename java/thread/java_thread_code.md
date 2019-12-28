@@ -63,3 +63,63 @@
 ​	Runnable :线程没有返回值
 
 ​	Callable :线程有返回值
+
+18) ThreadPoolDemo : 线程池的使用
+
+​	线程池做的工作主要是控制运行中的线程的数量，处理过程中再将线程放入队列，然后在线程创建后启动这些任务，如果线程的数量超过了最大数量，超出数量的线程排队等候（阻塞队列blockingQueue），等其他线程执行完毕，再从队列中取出任务执行。
+
+主要特点：线程复用；控制最大并发数；管理线程；
+
+第一：降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁的消耗。
+
+第二：提高响应速度。当任务到达时，任务可以不用等到线程创建就可以执行。
+
+第三：提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以统一的分配，调优和监控。
+
+线程池七大参数
+
+1.corePoolSize : 线程中的常驻核心线程数
+
+2.maximumPoolSize:线程池可以容纳的同时执行的最大线程数，此值必须大于等于1
+
+3.keepAvailableTime:多余的空闲线程存活的时间。
+
+​	当前线程数量超过corePoolSize 是，当空闲时间达到keepAvailableTime时，多余空闲线程会被销毁，直到只剩下corePoolSize 个线程为止。
+
+4.unit:keepAvailableTime的时间单位
+
+5.workQueue:任务队列，被提交单尚未执行的任务。（阻塞队列）
+
+6.threadFactory:表示生成线程池中工作线程的线程工厂，用于创建线程，一般用默认的就可以
+
+7.handler :拒绝策略，表示当队列满了，并且工作线程大于等于线程池的最大线程数（maximumPoolSize）
+
+线程池不允许使用Executers去创建，而是通过ThreadPoolExecutor的方式
+
+线程池配置参数的建议：
+
+​	CPU密集型： 任务需要大量的运算，没有阻塞，CPU一直全速运行，一定是多核CPU. 
+
+​			corePoolSize =CPU核数+1
+
+​			maximumPoolSize=corePoolSize 
+
+   IO密集型：存在大量的阻塞，
+
+​			corePoolSize =CPU核数/(1-阻塞系数) 阻塞系数一般在0.8-.09之间。
+
+​			例CPU核数=8，阻塞系数=0.9 
+
+​			corePoolSize =8/0.9 大约等于80
+
+19）CustomizeThreadPoolDemo：自定义线程池的实现
+
+20）DeadLockDemo ：死锁的实现
+
+​	死锁是指两个或两个以上线程在执行过程中* 因争夺资源而造成的互相等待的现象，若无外力干涉，它们将无法推进下去
+
+​	jps -l :查看java进程command
+
+​	jstack 进程编号 ： list java stack information
+
+​	![1577543478091](C:\Users\PENGLIU\AppData\Roaming\Typora\typora-user-images\1577543478091.png)
